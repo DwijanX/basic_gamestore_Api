@@ -24,7 +24,9 @@ public static class GamesEndpoint
     
     public static RouteGroupBuilder MapGamesEndpoints(this WebApplication app){
 
-        var group=app.MapGroup("games"); //this is a middleware that will add /games to all the routes
+        var group=app.MapGroup("games").WithParameterValidation(); //this is a middleware that will add /games to all the routes
+        
+        
         // Get /games
         group.MapGet("/", () => games);
 
@@ -35,6 +37,7 @@ public static class GamesEndpoint
 
         // POST /games
         group.MapPost("/", (CreateGameDto newGame)=>{
+            
             var gameDto=new GameDto(games.Max(game=>game.Id)+1,newGame.Name,newGame.Genre,newGame.Price,newGame.ReleaseDate);
             games.Add(gameDto);
             return Results.CreatedAtRoute(GetGameEndpoint,new {id=gameDto.Id},gameDto);
