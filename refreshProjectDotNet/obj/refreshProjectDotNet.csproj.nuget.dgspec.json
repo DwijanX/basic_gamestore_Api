@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\refreshProjectDotNet.csproj": {}
+    "c:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\refreshProjectDotNet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\refreshProjectDotNet.csproj": {
+    "c:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\refreshProjectDotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\refreshProjectDotNet.csproj",
+        "projectUniqueName": "c:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\refreshProjectDotNet.csproj",
         "projectName": "refreshProjectDotNet",
-        "projectPath": "C:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\refreshProjectDotNet.csproj",
+        "projectPath": "c:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\refreshProjectDotNet.csproj",
         "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\obj\\",
+        "outputPath": "c:\\Users\\chris\\Documents\\refreshProjectDotNet\\refreshProjectDotNet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
