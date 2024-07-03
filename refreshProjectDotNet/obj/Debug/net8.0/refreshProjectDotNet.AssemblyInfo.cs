@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("refreshProjectDotNet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+122ee82df37fe20d0941d4da02b336e3ecf18bb8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f51e24afa0654818461f3b2bb538985d72e1cb36")]
 [assembly: System.Reflection.AssemblyProductAttribute("refreshProjectDotNet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("refreshProjectDotNet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
