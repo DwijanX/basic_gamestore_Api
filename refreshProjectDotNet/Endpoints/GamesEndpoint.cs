@@ -1,4 +1,5 @@
-﻿using refreshProjectDotNet.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using refreshProjectDotNet.Data;
 using refreshProjectDotNet.Dtos;
 using refreshProjectDotNet.Entities;
 using refreshProjectDotNet.Mapping;
@@ -63,8 +64,10 @@ public static class GamesEndpoint
         });
 
         // Delete /games
-        group.MapDelete("/{id}",(int id)=>{
-            games.RemoveAll(game=>game.Id==id);
+        group.MapDelete("/{id}",(int id,GameStoreContext dbContext)=>{
+            dbContext.Games
+                .Where(game=>game.Id==id)
+                .ExecuteDelete();
             return Results.NoContent();
         });
 
