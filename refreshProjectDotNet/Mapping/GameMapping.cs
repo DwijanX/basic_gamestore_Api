@@ -15,6 +15,17 @@ public static class GameMapping
             ReleaseDate = dto.ReleaseDate
         };
     }
+    public static Game ToEntity(this UpdateGameDto dto,int id)
+    {
+        return new Game
+        {
+            Id = id,
+            Name = dto.Name,
+            GenreId = dto.GenreId,
+            Price = dto.Price,
+            ReleaseDate = dto.ReleaseDate
+        };
+    }
     public static GameSummaryDto ToSummaryDto(this Game entity)
     {
         return new(
