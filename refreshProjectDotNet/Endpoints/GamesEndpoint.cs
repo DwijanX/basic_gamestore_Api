@@ -36,7 +36,7 @@ public static class GamesEndpoint
         // GET /games/1
         group.MapGet("/{id}", (int id) => {
             GameDto? game=games.Find(game=>game.Id==id);
-            return game is null?Results.NotFound():Results.Ok(game);});
+            return game is null?Results.NotFound():Results.Ok(game);}).WithName(GetGameEndpoint);
 
         // POST /games
         group.MapPost("/", (CreateGameDto newGame,GameStoreContext dbContext)=>{
