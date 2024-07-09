@@ -1,4 +1,7 @@
-﻿using refreshProjectDotNet.Dtos;
+﻿using refreshProjectDotNet.Data;
+using refreshProjectDotNet.Dtos;
+using refreshProjectDotNet.Entities;
+using refreshProjectDotNet.Mapping;
 
 namespace refreshProjectDotNet.Endpoints;
 
@@ -36,11 +39,15 @@ public static class GamesEndpoint
             return game is null?Results.NotFound():Results.Ok(game);});
 
         // POST /games
-        group.MapPost("/", (CreateGameDto newGame)=>{
+        group.MapPost("/", (CreateGameDto newGame,GameStoreContext dbContext)=>{
             
-            var gameDto=new GameDto(games.Max(game=>game.Id)+1,newGame.Name,newGame.Genre,newGame.Price,newGame.ReleaseDate);
-            games.Add(gameDto);
-            return Results.CreatedAtRoute(GetGameEndpoint,new {id=gameDto.Id},gameDto);
+            Game game=newGame.ToEntity();
+            game.Genre=dbContext.Genres.Find(newGame.GenreId);
+            
+            
+            dbContext.Games.Add(game);
+            dbContext.SaveChanges();
+            return Results.CreatedAtRoute(GetGameEndpoint,new {id=game.Id},game.ToDto());
         });
 
         // PUT /games
