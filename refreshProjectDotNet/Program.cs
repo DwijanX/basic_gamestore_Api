@@ -2,6 +2,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using refreshProjectDotNet.Data;
+using refreshProjectDotNet.Dtos;
 using refreshProjectDotNet.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,7 +24,10 @@ builder.Services.AddAuthentication((X)=>{
     };
 });
 
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(options=>{
+    options.AddPolicy(IdentityData.AdminUserPolicyName,policy=>
+    policy.RequireClaim(IdentityData.ClaimName,"admin"));
+});
 
 var connString=builder.Configuration.GetConnectionString("GameStore");
 

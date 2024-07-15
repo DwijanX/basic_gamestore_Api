@@ -4,8 +4,7 @@ namespace refreshProjectDotNet.Dtos.auth;
 
 public record class CustomClaimDto
 (
-    [Required]string Type,
-    [Required]string Value
+    [Required]string Type
 );
 
 public record class TokenGenerationRequestDTO

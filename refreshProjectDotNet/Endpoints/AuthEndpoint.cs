@@ -25,7 +25,7 @@ public static class AuthEndpoint
                 new(JwtRegisteredClaimNames.Email,request.Email),
             };  
             foreach(var customClaim in request.CustomClaims){
-                claims.Add(new Claim(customClaim.Type,customClaim.Value));
+                claims.Add(new Claim("Type",customClaim.Type));
             }
             var tokenDescriptor=new SecurityTokenDescriptor{
                 Subject=new ClaimsIdentity(claims),

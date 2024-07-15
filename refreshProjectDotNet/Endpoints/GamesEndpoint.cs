@@ -70,7 +70,7 @@ public static class GamesEndpoint
                 .Where(game=>game.Id==id)
                 .ExecuteDeleteAsync();
             return Results.NoContent();
-        });
+        }).RequireAuthorization(IdentityData.AdminUserPolicyName);
 
         return group;
     }
