@@ -32,7 +32,8 @@ public static class GamesEndpoint
         
         
         // Get /games
-        group.MapGet("/", async (GameStoreContext dbContext) => await dbContext.Games.ToListAsync());
+        group.MapGet("/", async (GameStoreContext dbContext) => await dbContext.Games.ToListAsync())
+        .RequireAuthorization();
 
         // GET /games/1
         group.MapGet("/{id}", async (int id,GameStoreContext dbContext) => {

@@ -19,7 +19,7 @@ builder.Services.AddAuthentication((X)=>{
         ValidIssuer=builder.Configuration["JwtSettings:Issuer"],
         ValidAudience=builder.Configuration["JwtSettings:Audience"],
         IssuerSigningKey=new SymmetricSecurityKey
-        (Encoding.UTF8.GetBytes(builder.Configuration["JwtSettings:key"]))
+        (Encoding.ASCII.GetBytes(builder.Configuration["JwtSettings:key"]))
     };
 });
 
@@ -38,6 +38,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapGamesEndpoints();
+app.MapAuthEndpoints();
 
 
 app.Run();
